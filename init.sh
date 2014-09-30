@@ -12,7 +12,7 @@ bootstrap() {
 	FILE=$1
 	CONTENT=$2
 
-	if [ ! ~/${FILE} ]; then
+	if [ ! -f ~/${FILE} ]; then
 		echo $CONTENT > ~/${FILE}
 	else
 		echo 
