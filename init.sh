@@ -24,7 +24,7 @@ bootstrap() {
 	fi
 }
 
-if [ ! -L ~/.dotfiles ]; then
+if [ ! -L ~/.dotfiles ] && [ ! -d ~/.dotfiles ] ; then
 	echo "Setting up link ~/.dotfiles to ${ABSDIR}"
 	ln -s ${ABSDIR} ~/.dotfiles
 fi
