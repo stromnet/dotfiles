@@ -28,5 +28,5 @@ prompt="%m %~$ "
 alias gfn="cut -f1 -d':'|sort|uniq|tr '\n' ' ' && echo ''"
 
 # Load ssh-agent-manager if we are a "plain" (rather, not inside tmux)
-[ -z $TMUX ] && source ~/.dotfiles/profile.d/sshagent.sh
+[ -z $TMUX ] && source ~/.dotfiles/profile.d/ssh-agent-manager.sh
 
