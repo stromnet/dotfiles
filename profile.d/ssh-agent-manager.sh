@@ -3,6 +3,8 @@
 #
 # This script should be sourced in .zsrc:
 # [ -z $TMUX ] && source ~/profile.d/sshagent.sh
+#
+# Make sure .tmux.conf have the proper lines as well (see ../.tmux-global.conf)
 
 export SSH_AUTH_SOCK_LINK="/tmp/ssh-$USER/agent"
 
