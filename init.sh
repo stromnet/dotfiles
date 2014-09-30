@@ -29,6 +29,9 @@ if [ ! -L ~/.dotfiles ] && [ ! -d ~/.dotfiles ] ; then
 	ln -s ${ABSDIR} ~/.dotfiles
 fi
 
-bootstrap .zshrc "source ~/.dotfiles/.zshrc-global"
-bootstrap .vimrc "source ~/.dotfiles/.vimrc-global"
+mkdir -p ~/.vim/info
+
+bootstrap .zshrc "source ${ABSDIR}/.zshrc-global"
+bootstrap .vimrc "source ${ABSDIR}/.vimrc-global"
+bootstrap .tmux.conf "source-file ${ABSDIR}/.tmux-global.conf"
 
