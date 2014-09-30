@@ -1,0 +1,32 @@
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' max-errors 1
+zstyle :compinstall filename '/home/johan/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# Enable proper expansion of ..<tab>
+zstyle ':completion:*' special-dirs true
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+
+bindkey "^[p" history-beginning-search-backward
+bindkey "^[n" history-beginning-search-forward
+
+export LANG=en_US.UTF-8
+export VISUAL=vim
+export EDITOR=vim
+
+prompt="%m %~$ "
+
+# When using grep blaha|gfn you get a space delimited list of filenames which matched
+alias gfn="cut -f1 -d':'|sort|uniq|tr '\n' ' ' && echo ''"
+
+# Load ssh-agent-manager if we are a "plain" (rather, not inside tmux)
+[ -z $TMUX ] && source ~/.dotfiles/profile.d/sshagent.sh
+
